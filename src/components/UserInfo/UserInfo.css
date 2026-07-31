@@ -1,0 +1,25 @@
+.userInfoWrapper {
+  padding: 40px 80px;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.userInfoWrapper h1 {
+  color: #072654;
+  margin-bottom: 10px;
+}
+.userInfoWrapper__subtitle {
+  color: #a4a5aa;
+  margin-bottom: 30px;
+}
+.userInfoWrapper__nameInputBlock {
+  width: auto;
+  height: 70px;
+}
+.userInfoWrapper__nameInputBlock_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}/*# sourceMappingURL=UserInfo.css.map */

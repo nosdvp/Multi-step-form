@@ -1,0 +1,64 @@
+.stepsWrapper {
+  width: 300px;
+  height: auto;
+  background-image: url("../../img/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 30px;
+}
+.stepsWrapper__firstStep, .stepsWrapper__secondStep, .stepsWrapper__thirdStep, .stepsWrapper__fourthStep {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+.stepsWrapper__firstStep_countActive, .stepsWrapper__secondStep_countActive, .stepsWrapper__thirdStep_countActive, .stepsWrapper__fourthStep_countActive {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #483eff;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #bde0fd;
+  cursor: pointer;
+}
+.stepsWrapper__firstStep_countInactive, .stepsWrapper__secondStep_countInactive, .stepsWrapper__thirdStep_countInactive, .stepsWrapper__fourthStep_countInactive {
+  width: 43px;
+  height: 43px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.stepsWrapper__firstStep_descriptionSteps, .stepsWrapper__secondStep_descriptionSteps, .stepsWrapper__thirdStep_descriptionSteps, .stepsWrapper__fourthStep_descriptionSteps {
+  width: auto;
+}
+.stepsWrapper__firstStep_descriptionSteps p:nth-child(1), .stepsWrapper__secondStep_descriptionSteps p:nth-child(1), .stepsWrapper__thirdStep_descriptionSteps p:nth-child(1), .stepsWrapper__fourthStep_descriptionSteps p:nth-child(1) {
+  color: #afadff;
+  font-size: 16px;
+}
+.stepsWrapper__firstStep_descriptionSteps p:nth-child(2), .stepsWrapper__secondStep_descriptionSteps p:nth-child(2), .stepsWrapper__thirdStep_descriptionSteps p:nth-child(2), .stepsWrapper__fourthStep_descriptionSteps p:nth-child(2) {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  .stepsWrapper {
+    width: 275px;
+  }
+}/*# sourceMappingURL=Steps.css.map */
