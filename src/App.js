@@ -13,6 +13,7 @@ function App() {
         <Steps
           currentStep={currentStep}
 
+          setCurrentStep={setCurrentStep}
         />
 
         <UserInfo

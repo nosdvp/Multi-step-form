@@ -2,7 +2,9 @@ import React from 'react'
 import './Steps.css'
 
 const Steps = ({
-    currentStep
+    currentStep,
+
+    setCurrentStep
 }) => {
   return (
     <div className='stepsWrapper'>

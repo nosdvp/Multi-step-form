@@ -28,3 +28,21 @@
     width: 95%;
   }
 }
+
+@media (max-width: 768px){
+  .wrapper{
+    width: 100%;
+    height: 100vh;
+    display:inline;
+    background-color: #eef5ff;
+  }
+
+  .contentBlock{
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+}

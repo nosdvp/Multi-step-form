@@ -61,4 +61,28 @@
   .stepsWrapper {
     width: 275px;
   }
+}
+@media (max-width: 768px) {
+  .stepsWrapper {
+    background-image: url("../../img/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 0px;
+    padding: 10px;
+  }
+  .stepsWrapper__firstStep, .stepsWrapper__secondStep, .stepsWrapper__thirdStep, .stepsWrapper__fourthStep {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  .stepsWrapper__firstStep_descriptionSteps p, .stepsWrapper__secondStep_descriptionSteps p, .stepsWrapper__thirdStep_descriptionSteps p, .stepsWrapper__fourthStep_descriptionSteps p {
+    display: none;
+  }
 }/*# sourceMappingURL=Steps.css.map */

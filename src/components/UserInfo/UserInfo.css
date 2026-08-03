@@ -14,12 +14,82 @@
   color: #a4a5aa;
   margin-bottom: 30px;
 }
-.userInfoWrapper__nameInputBlock {
+.userInfoWrapper__nameInputBlock, .userInfoWrapper__emailInputBlock, .userInfoWrapper__phoneInputBlock {
   width: auto;
   height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 35px;
 }
-.userInfoWrapper__nameInputBlock_title {
+.userInfoWrapper__nameInputBlock_title, .userInfoWrapper__emailInputBlock_title, .userInfoWrapper__phoneInputBlock_title {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #072654;
+  font-weight: bold;
+  font-size: 16px;
+}
+.userInfoWrapper__nameInputBlock_title p:nth-child(2), .userInfoWrapper__emailInputBlock_title p:nth-child(2), .userInfoWrapper__phoneInputBlock_title p:nth-child(2) {
+  color: #ff1e34;
+}
+.userInfoWrapper__btnBlock {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  margin-top: 50px;
+}
+.userInfoWrapper__btnBlock button {
+  width: 150px;
+  outline: none;
+  background-color: #072654;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.userInfoWrapper__btnBlock button:hover {
+  transition: 0.1s;
+  transform: scale(1.05);
+}
+.userInfoWrapper__btnBlock button:active {
+  transition: 0.1s;
+  transform: scale(0.95);
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.errorInput {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: 1px solid #ff1e34;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.errorInput::-moz-placeholder {
+  color: #ff1e34;
+}
+.errorInput::placeholder {
+  color: #ff1e34;
+}
+
+@media (max-width: 768px) {
+  .userInfoWrapper {
+    padding: 20px 40px;
+  }
 }/*# sourceMappingURL=UserInfo.css.map */
