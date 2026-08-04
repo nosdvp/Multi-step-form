@@ -60,6 +60,59 @@
             }
         }
     }
+    /*SelectPlan*/
+    &__blockPlan{
+        width: 100%;
+        height: 170px;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &_firstPlan,
+        &_secondPlan,
+        &_thirdPlan{
+            width: 30%;
+            height: 170px;
+            border: 1px solid #c0c0c0;
+            border-radius: 10px;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            flex-direction: column;
+            &_imgBlock{
+                width: 100%;
+                height: 50px;
+                width: 40px;
+                height: 40px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            &_textBlock{
+                p:nth-child(1){
+                    color: #072654;
+                    font-weight: bold;
+                }
+                p:nth-child(2){
+                    color: #a2a2ac;
+                }
+            }
+            
+        }
+    }
+    &__periodPlan{
+        width: 100%;
+        height: 50px;
+        background-color: #f8f9fe;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    
 }
 
 .input{

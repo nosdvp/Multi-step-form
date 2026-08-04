@@ -59,6 +59,55 @@
   transition: 0.1s;
   transform: scale(0.95);
 }
+.userInfoWrapper {
+  /*SelectPlan*/
+}
+.userInfoWrapper__blockPlan {
+  width: 100%;
+  height: 170px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.userInfoWrapper__blockPlan_firstPlan, .userInfoWrapper__blockPlan_secondPlan, .userInfoWrapper__blockPlan_thirdPlan {
+  width: 30%;
+  height: 170px;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.userInfoWrapper__blockPlan_firstPlan_imgBlock, .userInfoWrapper__blockPlan_secondPlan_imgBlock, .userInfoWrapper__blockPlan_thirdPlan_imgBlock {
+  width: 100%;
+  height: 50px;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.userInfoWrapper__blockPlan_firstPlan_textBlock p:nth-child(1), .userInfoWrapper__blockPlan_secondPlan_textBlock p:nth-child(1), .userInfoWrapper__blockPlan_thirdPlan_textBlock p:nth-child(1) {
+  color: #072654;
+  font-weight: bold;
+}
+.userInfoWrapper__blockPlan_firstPlan_textBlock p:nth-child(2), .userInfoWrapper__blockPlan_secondPlan_textBlock p:nth-child(2), .userInfoWrapper__blockPlan_thirdPlan_textBlock p:nth-child(2) {
+  color: #a2a2ac;
+}
+.userInfoWrapper__periodPlan {
+  width: 100%;
+  height: 50px;
+  background-color: #f8f9fe;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 
 .input {
   width: 100%;

@@ -7,6 +7,15 @@ function App() {
 
   const [currentStep, setCurrentStep] = useState('Your info') 
 
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+
+  const [period, setPeriod] = useState('monthly')
+  const [costArcade, setCostArcade] = useState(9)
+  const [costAdvanced, setCostAdvanced] = useState(12)
+  const [costPro, setCostPro] = useState(15)
+
   return (
     <div className="wrapper">
       <div className='contentBlock'>
@@ -17,11 +26,26 @@ function App() {
         />
 
         <UserInfo
-          currentStep ={currentStep}
+          currentStep={currentStep}
+          name={name}
+          email={email}
+          phoneNumber={phoneNumber}
+          costArcade={costArcade}
+          costAdvanced={costAdvanced}
+          costPro={costPro}
+          period={period}
 
           setCurrentStep={setCurrentStep}
+          setName={setName}
+          setEmail={setEmail}
+          setPhoneNumber={setPhoneNumber}
+          setCostArcade={setCostArcade}
+          setCostAdvanced={setCostAdvanced}
+          setCostPro={setCostPro}
+          setPeriod={setPeriod}
         />
       </div>
+
     </div>
   );
 }

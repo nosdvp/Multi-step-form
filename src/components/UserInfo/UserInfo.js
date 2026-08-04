@@ -1,15 +1,30 @@
 import React, { useState } from 'react'
 import './UserInfo.css'
+import arcade from '../../img/icon-arcade.svg'
+import advanced from '../../img/icon-advanced.svg'
+import pro from '../../img/icon-pro.svg'
 
 const UserInfo = ({
     currentStep,
+    name,
+    email,
+    phoneNumber,
+    costArcade,
+    costAdvanced,
+    costPro,
+    period,
 
-    setCurrentStep
+    setCurrentStep,
+    setName,
+    setEmail,
+    setPhoneNumber,
+    setCostArcade,
+    setCostAdvanced,
+    setCostPro,
+    setPeriod,
 }) => {
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
+    
 
     const [errorName, setErrorName] = useState('')
     const [errorEmail, setErrorEmail] = useState('')
@@ -78,6 +93,60 @@ const UserInfo = ({
 
                 <div className='userInfoWrapper__btnBlock'>
                     <button onClick={next}>Next Step</button>
+                </div>
+            </>
+        ) : currentStep === 'Select plan' ? (
+            <>
+                <h1>Select your plan</h1>
+                <p className='userInfoWrapper__subtitle'>Please provide you name, email address, and phone number</p>
+                
+                <div className='userInfoWrapper__blockPlan'>
+                    <div className='userInfoWrapper__blockPlan_firstPlan'>
+                        <div className='userInfoWrapper__blockPlan_firstPlan_imgBlock'>
+                            <img
+                                src={arcade}
+                            />
+                        </div>
+                        <div className='userInfoWrapper__blockPlan_firstPlan_textBlock'>
+                            <p>Arcade</p>
+                            {period === 'monthly' ? <p>${costArcade}/mo</p> : <p>${costArcade}/year</p>}
+                        </div>
+                    </div>
+                    
+                    <div className='userInfoWrapper__blockPlan_secondPlan'>
+                        <div className='userInfoWrapper__blockPlan_secondPlan_imgBlock'>
+                            <img
+                                src={advanced}                            
+                            />
+                        </div>
+                        <div className='userInfoWrapper__blockPlan_secondPlan_textBlock'>
+                            <p>Advanced</p>
+                            {period === 'monthly' ? <p>${costAdvanced}/mo</p> : <p>${costAdvanced}/year</p>}
+                        </div>
+                    </div>
+
+                    <div className='userInfoWrapper__blockPlan_thirdPlan'>
+                        <div className='userInfoWrapper__blockPlan_thirdPlan_imgBlock'>
+                            <img
+                                src={pro}
+                            />
+                        </div>
+                        <div className='userInfoWrapper__blockPlan_thirdPlan_textBlock'>
+                            <p>Pro</p>
+                            {period === 'monthly' ? <p>${costPro}/mo</p> : <p>${costPro}/year</p>}
+                        </div>
+                    </div>
+                </div>
+
+                <div className='userInfoWrapper__periodPlan'>
+                    <p>Monthly</p>
+                    <div></div>
+                    <p>Yearly</p>
+                </div>
+
+                <div className='userInfoWrapper__btnBlock'>
+                    <button>Go back</button>
+                    <button>Next Step</button>
                 </div>
             </>
         ) : null}
