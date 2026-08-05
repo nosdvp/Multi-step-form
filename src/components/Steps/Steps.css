@@ -1,88 +1,85 @@
 .stepsWrapper {
-  width: 300px;
-  height: auto;
   background-image: url("../../img/bg-sidebar-desktop.svg");
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
+  background-position: center;
+  width: 300px;
+  height: 100%;
   border-radius: 10px;
+  padding: 40px 30px;
   box-sizing: border-box;
-  padding: 30px;
 }
 .stepsWrapper__firstStep, .stepsWrapper__secondStep, .stepsWrapper__thirdStep, .stepsWrapper__fourthStep {
+  width: 100%;
+  height: 50px;
   display: flex;
   align-items: center;
-  justify-content: start;
   gap: 20px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 30px;
+  cursor: pointer;
+  margin-bottom: 40px;
 }
-.stepsWrapper__firstStep_countActive, .stepsWrapper__secondStep_countActive, .stepsWrapper__thirdStep_countActive, .stepsWrapper__fourthStep_countActive {
-  width: 43px;
-  height: 43px;
+.stepsWrapper__firstStep_circleActive, .stepsWrapper__secondStep_circleActive, .stepsWrapper__thirdStep_circleActive, .stepsWrapper__fourthStep_circleActive {
+  width: 47px;
+  height: 47px;
+  background-color: #bde2fe;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #483eff;
-  font-size: 20px;
   font-weight: bold;
-  background-color: #bde0fd;
-  cursor: pointer;
+  font-size: 22px;
 }
-.stepsWrapper__firstStep_countInactive, .stepsWrapper__secondStep_countInactive, .stepsWrapper__thirdStep_countInactive, .stepsWrapper__fourthStep_countInactive {
-  width: 43px;
-  height: 43px;
+.stepsWrapper__firstStep_circleInactive, .stepsWrapper__secondStep_circleInactive, .stepsWrapper__thirdStep_circleInactive, .stepsWrapper__fourthStep_circleInactive {
+  width: 45px;
+  height: 45px;
   border: 1px solid white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 20px;
   font-weight: bold;
-  cursor: pointer;
+  font-size: 22px;
 }
-.stepsWrapper__firstStep_descriptionSteps, .stepsWrapper__secondStep_descriptionSteps, .stepsWrapper__thirdStep_descriptionSteps, .stepsWrapper__fourthStep_descriptionSteps {
-  width: auto;
+.stepsWrapper__firstStep_descriptionStep, .stepsWrapper__secondStep_descriptionStep, .stepsWrapper__thirdStep_descriptionStep, .stepsWrapper__fourthStep_descriptionStep {
+  width: 70%;
+  height: 50px;
 }
-.stepsWrapper__firstStep_descriptionSteps p:nth-child(1), .stepsWrapper__secondStep_descriptionSteps p:nth-child(1), .stepsWrapper__thirdStep_descriptionSteps p:nth-child(1), .stepsWrapper__fourthStep_descriptionSteps p:nth-child(1) {
-  color: #afadff;
+.stepsWrapper__firstStep_descriptionStep p:nth-child(1), .stepsWrapper__secondStep_descriptionStep p:nth-child(1), .stepsWrapper__thirdStep_descriptionStep p:nth-child(1), .stepsWrapper__fourthStep_descriptionStep p:nth-child(1) {
+  color: rgb(199, 199, 199);
   font-size: 16px;
+  margin-bottom: 3px;
 }
-.stepsWrapper__firstStep_descriptionSteps p:nth-child(2), .stepsWrapper__secondStep_descriptionSteps p:nth-child(2), .stepsWrapper__thirdStep_descriptionSteps p:nth-child(2), .stepsWrapper__fourthStep_descriptionSteps p:nth-child(2) {
+.stepsWrapper__firstStep_descriptionStep p:nth-child(2), .stepsWrapper__secondStep_descriptionStep p:nth-child(2), .stepsWrapper__thirdStep_descriptionStep p:nth-child(2), .stepsWrapper__fourthStep_descriptionStep p:nth-child(2) {
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 @media (max-width: 1024px) {
   .stepsWrapper {
     width: 275px;
+    height: 100%;
   }
 }
 @media (max-width: 768px) {
   .stepsWrapper {
     background-image: url("../../img/bg-sidebar-mobile.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-position: center;
     width: 100%;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
+    height: 250px;
     border-radius: 0px;
-    padding: 10px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding: 40px 30px 150px 30px;
   }
   .stepsWrapper__firstStep, .stepsWrapper__secondStep, .stepsWrapper__thirdStep, .stepsWrapper__fourthStep {
+    align-items: center;
     justify-content: center;
-    margin-bottom: 0;
+    margin-bottom: 0px;
   }
-  .stepsWrapper__firstStep_descriptionSteps p, .stepsWrapper__secondStep_descriptionSteps p, .stepsWrapper__thirdStep_descriptionSteps p, .stepsWrapper__fourthStep_descriptionSteps p {
+  .stepsWrapper__firstStep_descriptionStep, .stepsWrapper__secondStep_descriptionStep, .stepsWrapper__thirdStep_descriptionStep, .stepsWrapper__fourthStep_descriptionStep {
     display: none;
   }
 }/*# sourceMappingURL=Steps.css.map */

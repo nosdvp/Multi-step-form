@@ -21,28 +21,8 @@ function App() {
       <div className='contentBlock'>
         <Steps
           currentStep={currentStep}
-
+        
           setCurrentStep={setCurrentStep}
-        />
-
-        <UserInfo
-          currentStep={currentStep}
-          name={name}
-          email={email}
-          phoneNumber={phoneNumber}
-          costArcade={costArcade}
-          costAdvanced={costAdvanced}
-          costPro={costPro}
-          period={period}
-
-          setCurrentStep={setCurrentStep}
-          setName={setName}
-          setEmail={setEmail}
-          setPhoneNumber={setPhoneNumber}
-          setCostArcade={setCostArcade}
-          setCostAdvanced={setCostAdvanced}
-          setCostPro={setCostPro}
-          setPeriod={setPeriod}
         />
       </div>
 
@@ -51,3 +31,5 @@ function App() {
 }
 
 export default App;
+
+
