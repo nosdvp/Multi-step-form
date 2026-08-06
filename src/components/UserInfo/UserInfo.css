@@ -1,1 +1,111 @@
-/*# sourceMappingURL=UserInfo.css.map */
+.UIWrapper {
+  width: 100%;
+  height: 100%;
+  padding: 60px 50px 20px 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.UIWrapper__titleBlock {
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+}
+.UIWrapper__titleBlock_userInfoTitle, .UIWrapper__titleBlock_selectPlanTitle, .UIWrapper__titleBlock_addOnsTitle, .UIWrapper__titleBlock__summaryTitle {
+  color: #00204d;
+  margin-bottom: 15px;
+}
+.UIWrapper__titleBlock_userInfoSubTitle, .UIWrapper__titleBlock_selectPlanSubTitle, .UIWrapper__titleBlock_addOnsSubTitle, .UIWrapper__titleBlock_summarySubTitle {
+  color: rgb(152, 152, 152);
+}
+.UIWrapper__contentBlock {
+  width: 100%;
+  height: auto;
+}
+.UIWrapper__contentBlock_blockInputName, .UIWrapper__contentBlock_blockInputEmail, .UIWrapper__contentBlock_blockInputPhone {
+  width: 100%;
+  height: auto;
+  padding-bottom: 30px;
+}
+.UIWrapper__contentBlock_blockInputName_titleLine, .UIWrapper__contentBlock_blockInputEmail_titleLine, .UIWrapper__contentBlock_blockInputPhone_titleLine {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.UIWrapper__contentBlock_blockInputName_titleLine p:nth-child(1), .UIWrapper__contentBlock_blockInputEmail_titleLine p:nth-child(1), .UIWrapper__contentBlock_blockInputPhone_titleLine p:nth-child(1) {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00204d;
+}
+.UIWrapper__contentBlock_blockInputName_titleLine p:nth-child(2), .UIWrapper__contentBlock_blockInputEmail_titleLine p:nth-child(2), .UIWrapper__contentBlock_blockInputPhone_titleLine p:nth-child(2) {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff3f3f;
+}
+.UIWrapper__contentBlock_blockInputName_input, .UIWrapper__contentBlock_blockInputEmail_input, .UIWrapper__contentBlock_blockInputPhone_input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: 1px solid rgba(212, 212, 212, 0.679);
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+.UIWrapper__button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.UIWrapper__button_buttonNextStep {
+  outline: none;
+  width: 150px;
+  height: 50px;
+  background-color: #00204d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.UIWrapper__button_buttonNextStep:hover {
+  transform: scale(1.05);
+  transition: all 0.1s;
+}
+.UIWrapper__button_buttonNextStep:active {
+  transform: scale(0.95);
+  transition: all 0.1s;
+}
+
+@media (max-width: 768px) {
+  .UIWrapper {
+    width: 90%;
+    height: 350px;
+    padding: 30px 20px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: -100px;
+  }
+  .UIWrapper__titleBlock {
+    width: 100%;
+    height: auto;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+  }
+  .UIWrapper__titleBlock_userInfoTitle, .UIWrapper__titleBlock_selectPlanTitle, .UIWrapper__titleBlock_addOnsTitle, .UIWrapper__titleBlock__summaryTitle {
+    color: #00204d;
+    margin-bottom: 15px;
+  }
+  .UIWrapper__titleBlock_userInfoSubTitle, .UIWrapper__titleBlock_selectPlanSubTitle, .UIWrapper__titleBlock_addOnsSubTitle, .UIWrapper__titleBlock_summarySubTitle {
+    color: rgb(152, 152, 152);
+  }
+}
+@media (max-width: 425px) {
+  .UIWrapper__titleBlock_userInfoTitle {
+    font-size: 25px;
+  }
+}/*# sourceMappingURL=UserInfo.css.map */

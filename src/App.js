@@ -24,6 +24,18 @@ function App() {
         
           setCurrentStep={setCurrentStep}
         />
+
+        <UserInfo
+          currentStep={currentStep}
+          name={name}
+          email={email}
+          phoneNumber={phoneNumber}
+        
+          setCurrentStep={setCurrentStep}
+          setName={setName}
+          setEmail={setEmail}
+          setPhoneNumber={setPhoneNumber}
+        />
       </div>
 
     </div>
