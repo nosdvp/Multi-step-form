@@ -59,14 +59,43 @@
                 box-sizing: border-box;
             }
         }
+        &_changePeriod{
+            width: 100%;
+            height: 50px;
+            background-color: #f8f9fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            &_toggle{
+                width: 60px;
+                height: 30px;
+                border-radius: 20px;
+                background-color: #00204d;
+                padding: 5px;
+                box-sizing: border-box;
+                cursor: pointer;
+                &_circleMonthly,
+                &_circleYearly{
+                    width: 20px;
+                    height: 20px;
+                    background-color: white;
+                    border-radius: 50%;
+                }
+                &_circleYearly{
+                    transform: translateX(30px);
+                }
+            }
+        }
     }
-    &__button{
+    &__buttonDesktop{
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-top: 30px;
-        &_buttonNextStep{
+        &_buttonNextStep,
+        &_buttonBackStep{
             outline: none;
             width: 150px;
             height: 50px;
@@ -86,19 +115,81 @@
                 transition: all 0.1s;
             }
         }
+        &_buttonBackStep{
+            background-color: white;
+            color: #00204d;
+        }
+    }
+    &__finish{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        img,
+        h1{
+            margin-bottom: 20px;
+        }
+        p{
+            width: 80%;
+            text-align: center;
+            color: rgb(152, 152, 152);
+            span{
+                text-decoration: underline;
+                text-underline-offset: 5px;
+                font-style: italic;
+                cursor: pointer;
+            }
+        }
     }
 }
 
-
+.buttonMobile{
+        display: none;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        height: 80px;
+        padding: 0px 20px;
+        box-sizing: border-box;
+        &__buttonNextStep,
+        &__buttonBackStep{
+            outline: none;
+            width: 150px;
+            height: 50px;
+            background-color: #00204d;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.05);
+                transition: all 0.1s;
+            }
+            &:active{
+                transform: scale(0.95);
+                transition: all 0.1s;
+            }
+        }
+        &__buttonBackStep{
+            background-color: white;
+            color: #00204d;
+        }
+}
 
 @media(max-width:768px){
     .UIWrapper{
         width: 90%;
-        height: 350px;
+        min-height: 350px;
         padding: 30px 20px;
         background-color: white;
         margin: 0 auto;
         margin-top: -100px;
+        margin-bottom: 50px;
         &__titleBlock{
             width: 100%;
             height: auto;
@@ -118,6 +209,12 @@
                 color: rgb(152, 152, 152);
             }
         }
+        &__buttonDesktop{
+            display: none;
+        }
+    }
+    .buttonMobile{
+        display: flex;
     }
 }
 

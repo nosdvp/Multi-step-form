@@ -30,11 +30,13 @@ function App() {
           name={name}
           email={email}
           phoneNumber={phoneNumber}
+          period={period}
         
           setCurrentStep={setCurrentStep}
           setName={setName}
           setEmail={setEmail}
           setPhoneNumber={setPhoneNumber}
+          setPeriod={setPeriod}
         />
       </div>
 

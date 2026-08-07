@@ -34,7 +34,7 @@ const Steps = ({
         </div>
 
         <div className='stepsWrapper__fourthStep' onClick={() => setCurrentStep('Summary')}>
-          <div className={currentStep === 'Summary' ? 'stepsWrapper__fourthStep_circleActive' : 'stepsWrapper__fourthStep_circleInactive'}>4</div>
+          <div className={currentStep === 'Summary' || currentStep === 'Finish' ? 'stepsWrapper__fourthStep_circleActive' : 'stepsWrapper__fourthStep_circleInactive'}>4</div>
           <div className='stepsWrapper__fourthStep_descriptionStep'>
             <p>Step 4</p>
             <p>SUMMARY</p>
