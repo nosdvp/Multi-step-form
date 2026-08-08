@@ -53,6 +53,63 @@
   padding: 5px 10px;
   box-sizing: border-box;
 }
+.UIWrapper__contentBlock_planBlock {
+  width: 100%;
+  min-height: 200px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.UIWrapper__contentBlock_planBlock_arcadeInactive, .UIWrapper__contentBlock_planBlock_advancedInactive, .UIWrapper__contentBlock_planBlock_proInactive {
+  width: 30%;
+  height: 100%;
+  border: 1px solid silver;
+  border-radius: 10px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.UIWrapper__contentBlock_planBlock_arcadeInactive:hover, .UIWrapper__contentBlock_planBlock_advancedInactive:hover, .UIWrapper__contentBlock_planBlock_proInactive:hover {
+  border: 1px solid #00204d;
+  background-color: #f8f9fe;
+}
+.UIWrapper__contentBlock_planBlock_arcadeInactive_title, .UIWrapper__contentBlock_planBlock_advancedInactive_title, .UIWrapper__contentBlock_planBlock_proInactive_title {
+  margin-top: 40px;
+  color: #00204d;
+  font-size: 18px;
+  font-weight: bold;
+}
+.UIWrapper__contentBlock_planBlock_arcadeInactive_cost, .UIWrapper__contentBlock_planBlock_advancedInactive_cost, .UIWrapper__contentBlock_planBlock_proInactive_cost {
+  color: silver;
+}
+.UIWrapper__contentBlock_planBlock_arcadeInactive_cutPrice, .UIWrapper__contentBlock_planBlock_advancedInactive_cutPrice, .UIWrapper__contentBlock_planBlock_proInactive_cutPrice {
+  color: #00204d;
+  font-weight: 500;
+}
+.UIWrapper__contentBlock_planBlock_arcadeActive, .UIWrapper__contentBlock_planBlock_advancedActive, .UIWrapper__contentBlock_planBlock_proActive {
+  width: 30%;
+  height: 100%;
+  border: 1px solid #00204d;
+  background-color: #f8f9fe;
+  border-radius: 10px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.UIWrapper__contentBlock_planBlock_arcadeActive_title, .UIWrapper__contentBlock_planBlock_advancedActive_title, .UIWrapper__contentBlock_planBlock_proActive_title {
+  margin-top: 40px;
+  color: #00204d;
+  font-size: 18px;
+  font-weight: bold;
+}
+.UIWrapper__contentBlock_planBlock_arcadeActive_cost, .UIWrapper__contentBlock_planBlock_advancedActive_cost, .UIWrapper__contentBlock_planBlock_proActive_cost {
+  color: silver;
+}
+.UIWrapper__contentBlock_planBlock_arcadeActive_cutPrice, .UIWrapper__contentBlock_planBlock_advancedActive_cutPrice, .UIWrapper__contentBlock_planBlock_proActive_cutPrice {
+  color: #00204d;
+  font-weight: 500;
+}
 .UIWrapper__contentBlock_changePeriod {
   width: 100%;
   height: 50px;
@@ -61,6 +118,8 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
+  margin-bottom: 22px;
+  border-radius: 10px;
 }
 .UIWrapper__contentBlock_changePeriod_toggle {
   width: 60px;
@@ -195,6 +254,20 @@
   }
   .UIWrapper__buttonDesktop {
     display: none;
+  }
+  .UIWrapper__contentBlock_planBlock {
+    display: flex;
+    flex-direction: column;
+  }
+  .UIWrapper__contentBlock_planBlock_arcadeInactive, .UIWrapper__contentBlock_planBlock_advancedInactive, .UIWrapper__contentBlock_planBlock_proInactive {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .UIWrapper__contentBlock_planBlock_arcadeActive, .UIWrapper__contentBlock_planBlock_advancedActive, .UIWrapper__contentBlock_planBlock_proActive {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
   }
   .buttonMobile {
     display: flex;

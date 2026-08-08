@@ -14,6 +14,8 @@ const UserInfo = ({
     costAdvanced,
     costPro,
     period,
+    choosePlan,
+    choosePlanCost,
 
     setCurrentStep,
     setName,
@@ -23,7 +25,8 @@ const UserInfo = ({
     setCostAdvanced,
     setCostPro,
     setPeriod,
-
+    setChoosePlan,
+    setChoosePlanCost
 }) => {
 
     const [errorName, setErrorName] = useState('')
@@ -50,19 +53,25 @@ const UserInfo = ({
     }
 
     const changePeriod = () => {
-        const changePeriod = () => {
-            if(period === 'monthly') {
-                setPeriod('yearly')
-                setCostArcade(90)
-                setCostAdvanced(120)
-                setCostPro(150)
-            }else {
-                setPeriod('monthly')
-                setCostArcade(9)
-                setCostAdvanced(12)
-                setCostPro(15)
-            }
+        if(period === 'Monthly'){
+            setPeriod('Yearly')
+            setCostArcade(90)
+            setCostAdvanced(120)
+            setCostPro(150)
+        }else{
+            setPeriod('Monthly')
+            setCostArcade(9)
+            setCostAdvanced(12)
+            setCostPro(15)
         }
+    }
+
+    const choicePlan = (name, cost, period) => {
+        console.log(`namePlan: ${name}`)
+        console.log(`namePlan: ${cost}`)
+        console.log(`namePlan: ${period}`)
+        setChoosePlan(name)
+        setChoosePlanCost(cost)
     }
 
   return (
@@ -140,11 +149,38 @@ const UserInfo = ({
                             </>
                         ) : currentStep === 'Select plan' ? (
                             <>
-                                <div>{}</div>
+                                <div className='UIWrapper__contentBlock_planBlock'>
+                                    <div className={choosePlan === 'Arcade' ? 'UIWrapper__contentBlock_planBlock_arcadeActive' : 'UIWrapper__contentBlock_planBlock_arcadeInactive'} 
+                                         onClick={() => choicePlan('Arcade', costArcade, period)}
+                                    >
+                                        <img src={arcade}/>
+                                        <p className='UIWrapper__contentBlock_planBlock_arcadeInactive_title'>Arcade</p>
+                                        <p className='UIWrapper__contentBlock_planBlock_arcadeInactive_cost'>${costArcade}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</p>
+                                        {period === 'Yearly' && <p className='UIWrapper__contentBlock_planBlock_arcadeInactive_cutPrice'>2 months free</p>}
+                                    </div>
+
+                                    <div className={choosePlan === 'Advanced' ? 'UIWrapper__contentBlock_planBlock_advancedActive' : 'UIWrapper__contentBlock_planBlock_advancedInactive'} 
+                                         onClick={() => choicePlan('Advanced', costAdvanced, period)}
+                                    >
+                                        <img src={advanced}/>
+                                        <p className='UIWrapper__contentBlock_planBlock_advancedInactive_title'>Advanced</p>
+                                        <p className='UIWrapper__contentBlock_planBlock_advancedInactive_cost'>${costAdvanced}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</p>
+                                        {period === 'Yearly' && <p className='UIWrapper__contentBlock_planBlock_advancedInactive_cutPrice'>2 months free</p>}
+                                    </div>
+
+                                    <div className={choosePlan === 'Pro' ? 'UIWrapper__contentBlock_planBlock_proActive' : 'UIWrapper__contentBlock_planBlock_proInactive'} 
+                                         onClick={() => choicePlan('Pro', costPro, period)}
+                                    >
+                                        <img src={pro}/>
+                                        <p className='UIWrapper__contentBlock_planBlock_proInactive_title'>Pro</p>
+                                        <p className='UIWrapper__contentBlock_planBlock_proInactive_cost'>${costPro}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</p>
+                                        {period === 'Yearly' && <p className='UIWrapper__contentBlock_planBlock_proInactive_cutPrice'>2 months free</p>}
+                                    </div>
+                                </div>
                                 <div className='UIWrapper__contentBlock_changePeriod'>
                                     <div className='UIWrapper__contentBlock_changePeriod_monthly'>Monthly</div>
                                     <div className='UIWrapper__contentBlock_changePeriod_toggle' onClick={changePeriod}>
-                                        <div className={period === 'monthly' ? 'UIWrapper__contentBlock_changePeriod_toggle_circleMonthly' : 'UIWrapper__contentBlock_changePeriod_toggle_circleYearly'}> </div>
+                                        <div className={period === 'Monthly' ? 'UIWrapper__contentBlock_changePeriod_toggle_circleMonthly' : 'UIWrapper__contentBlock_changePeriod_toggle_circleYearly'}> </div>
                                     </div>
                                     <div className='UIWrapper__contentBlock_changePeriod_yearly'>Yearly</div>
                                 </div>
