@@ -139,6 +139,11 @@
 .UIWrapper__contentBlock_changePeriod_toggle_circleYearly {
   transform: translateX(30px);
 }
+.UIWrapper__contentBlock_firstItem {
+  width: 100%;
+  height: 100px;
+  border: 1px solid red;
+}
 .UIWrapper__buttonDesktop {
   width: 100%;
   display: flex;

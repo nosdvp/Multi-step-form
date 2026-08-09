@@ -185,6 +185,10 @@ const UserInfo = ({
                                     <div className='UIWrapper__contentBlock_changePeriod_yearly'>Yearly</div>
                                 </div>
                             </>
+                        ) : currentStep === 'Add-ons' ? (
+                                <>
+                                    <div className='UIWrapper__contentBlock_firstItem'></div>
+                                </>
                         ) : null}
 
                         <div className='UIWrapper__buttonDesktop'>
