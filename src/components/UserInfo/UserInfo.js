@@ -216,42 +216,75 @@ const UserInfo = ({
                                 </div>
                             </>
                         ) : currentStep === 'Add-ons' ? (
-                                <>
-                                    <div className={UIWrapper__contentBlock}>
-                                        <div className={saveAddService.some(item => item.name === 'Online service' ? 'UIWrapper__contentBlock_firstItemInactive_description' : 'UIWrapper__contentBlock_firstItemInactive_description'}>
-                                            <div className='UIWrapper__contentBlock_firstItemInactive_description_checkBox' onClick={() => choiceAddService('Online service', serviceOne)}></div>
-                                            <div className='UIWrapper__contentBlock_firstItemInactive_description_nameItem'>
+                                <div className='UIWrapper__contentBlock_selectPlan'>
+
+                                    <div 
+                                        className={saveAddService.some(item => item.name === 'Online service') ? 
+                                                'UIWrapper__contentBlock_selectPlan_firstItemActive' : 
+                                                'UIWrapper__contentBlock_selectPlan_firstItemInactive'
+                                            }
+                                        onClick={() => choiceAddService('Online service', serviceOne)}
+                                    >    
+                                        <div className='UIWrapper__contentBlock_selectPlan_firstItemInactive_description'>
+                                            <div className={saveAddService.some(item => item.name === 'Online service') ? 
+                                                            'UIWrapper__contentBlock_selectPlan_firstItemActive_description_checkBoxActive' : 
+                                                            'UIWrapper__contentBlock_selectPlan_firstItemInactive_description_checkBoxInactive'
+                                            }>
+                                                {saveAddService.some(item => item.name === 'Online service') && (<img src={check}/>)}
+                                            </div>
+                                            <div className='UIWrapper__contentBlock_selectPlan_firstItemInactive_description_nameItem'>
                                                 <p>Online service</p>
-                                                <p>Access to multiplayer games</p>
+                                                <p>Access to multiplayer game</p>
                                             </div>
                                         </div>
-                                        <div className='UIWrapper__contentBlock_firstItemInactive_cost'>
-                                            +${serviceOne}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}
-                                        </div>
+                                        <div className='UIWrapper__contentBlock_selectPlan_firstItemInactive_cost'>+${serviceOne}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</div>
+                                    </div>
 
-                                        <div className={saveAddService.some(item => item.name === 'Larger storage') ? 'UIWrapper__contentBlock_secondItemActive_description' : 'UIWrapper__contentBlock_secondItemInactive_description'}>
-                                            <div className='UIWrapper__contentBlock_secondItemInactive_description_checkBox' onClick={() => choiceAddService('Larger storage', serviceOne)}></div>
-                                            <div className='UIWrapper__contentBlock_secondItemInactive_description_nameItem'>
+                                    <div 
+                                        className={saveAddService.some(item => item.name === 'Larger storage') ? 
+                                                'UIWrapper__contentBlock_selectPlan_secondItemActive' : 
+                                                'UIWrapper__contentBlock_selectPlan_secondItemInactive'
+                                            }
+                                        onClick={() => choiceAddService('Larger storage', serviceTwo)}
+                                    >    
+                                        <div className='UIWrapper__contentBlock_selectPlan_secondItemInactive_description'>
+                                            <div className={saveAddService.some(item => item.name === 'Larger storage') ? 
+                                                            'UIWrapper__contentBlock_selectPlan_secondItemActive_description_checkBoxActive' : 
+                                                            'UIWrapper__contentBlock_selectPlan_secondItemInactive_description_checkBoxInactive'
+                                            }>
+                                                {saveAddService.some(item => item.name === 'Larger storage') && (<img src={check}/>)}
+                                            </div>
+                                            <div className='UIWrapper__contentBlock_selectPlan_secondItemInactive_description_nameItem'>
                                                 <p>Larger storage</p>
-                                                <p>Extra 1TB of cloud save</p>
+                                                <p>Extra 1TB on cloud save</p>
                                             </div>
                                         </div>
-                                        <div className='UIWrapper__contentBlock_secondItemInactive_cost'>
-                                            +${serviceOne}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}
-                                        </div>
+                                        <div className='UIWrapper__contentBlock_selectPlan_secondItemInactive_cost'>+${serviceTwo}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</div>
+                                    </div>
 
-                                        <div className={saveAddService.some(item => item.name === 'Custom profile') ? 'UIWrapper__contentBlock_thirdItemActive_description' : 'UIWrapper__contentBlock_thirdItemInactive_description'}>
-                                            <div className='UIWrapper__contentBlock_thirdItemInactive_description_checkBox' onClick={() => choiceAddService('Custom profile', serviceOne)}></div>
-                                            <div className='UIWrapper__contentBlock_thirdItemInactive_description_nameItem'>
+                                    <div 
+                                        className={saveAddService.some(item => item.name === 'Custom profile') ? 
+                                                'UIWrapper__contentBlock_selectPlan_thirdItemActive' : 
+                                                'UIWrapper__contentBlock_selectPlan_thirdItemInactive'
+                                            }
+                                        onClick={() => choiceAddService('Custom profile', serviceThree)}
+                                    >    
+                                        <div className='UIWrapper__contentBlock_selectPlan_thirdItemInactive_description'>
+                                            <div className={saveAddService.some(item => item.name === 'Custom profile') ? 
+                                                            'UIWrapper__contentBlock_selectPlan_thirdItemActive_description_checkBoxActive' : 
+                                                            'UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_checkBoxInactive'
+                                            }>
+                                                {saveAddService.some(item => item.name === 'Custom profile') && (<img src={check}/>)}
+                                            </div>
+                                            <div className='UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_nameItem'>
                                                 <p>Customizable profile</p>
                                                 <p>Custom theme on your profile</p>
                                             </div>
                                         </div>
-                                        <div className='UIWrapper__contentBlock_thirdItemInactive_cost'>
-                                            +${serviceOne}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}
-                                        </div>
+                                        <div className='UIWrapper__contentBlock_selectPlan_thirdItemInactive_cost'>+${serviceThree}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</div>
                                     </div>
-                                </>
+
+                                </div>
                         ) : null}
 
                         <div className='UIWrapper__buttonDesktop'>

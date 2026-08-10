@@ -139,18 +139,27 @@
 .UIWrapper__contentBlock_changePeriod_toggle_circleYearly {
   transform: translateX(30px);
 }
-.UIWrapper__contentBlock_firstItemInactive, .UIWrapper__contentBlock_secondItemInactive, .UIWrapper__contentBlock_thirdItemInactive {
+.UIWrapper__contentBlock_selectPlan {
   width: 100%;
-  height: 100px;
-  padding: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.UIWrapper__contentBlock_selectPlan_firstItemInactive, .UIWrapper__contentBlock_selectPlan_secondItemInactive, .UIWrapper__contentBlock_selectPlan_thirdItemInactive {
+  width: 100%;
+  height: 90px;
+  padding: 15px;
   box-sizing: border-box;
   border: 1px solid silver;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
-.UIWrapper__contentBlock_firstItemInactive_description, .UIWrapper__contentBlock_secondItemInactive_description, .UIWrapper__contentBlock_thirdItemInactive_description {
+.UIWrapper__contentBlock_selectPlan_firstItemInactive_description, .UIWrapper__contentBlock_selectPlan_secondItemInactive_description, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -158,22 +167,22 @@
   height: 100%;
   gap: 20px;
 }
-.UIWrapper__contentBlock_firstItemInactive_description_checkBox, .UIWrapper__contentBlock_secondItemInactive_description_checkBox, .UIWrapper__contentBlock_thirdItemInactive_description_checkBox {
+.UIWrapper__contentBlock_selectPlan_firstItemInactive_description_checkBoxInactive, .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_checkBoxInactive, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_checkBoxInactive {
   width: 30px;
   height: 30px;
   border: 1px solid silver;
   border-radius: 10px;
   cursor: pointer;
 }
-.UIWrapper__contentBlock_firstItemInactive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_secondItemInactive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_thirdItemInactive_description_nameItem p:nth-child(1) {
+.UIWrapper__contentBlock_selectPlan_firstItemInactive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_nameItem p:nth-child(1) {
   color: #00204d;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.UIWrapper__contentBlock_firstItemInactive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_secondItemInactive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_thirdItemInactive_description_nameItem p:nth-child(2) {
+.UIWrapper__contentBlock_selectPlan_firstItemInactive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_nameItem p:nth-child(2) {
   color: rgb(149, 149, 149);
 }
-.UIWrapper__contentBlock_firstItemInactive_cost, .UIWrapper__contentBlock_secondItemInactive_cost, .UIWrapper__contentBlock_thirdItemInactive_cost {
+.UIWrapper__contentBlock_selectPlan_firstItemInactive_cost, .UIWrapper__contentBlock_selectPlan_secondItemInactive_cost, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_cost {
   width: 80px;
   height: 100%;
   display: flex;
@@ -181,19 +190,20 @@
   justify-content: center;
   color: #4f43ff;
 }
-.UIWrapper__contentBlock_firstItemActive, .UIWrapper__contentBlock_secondItemActive, .UIWrapper__contentBlock_thirdItemActive {
+.UIWrapper__contentBlock_selectPlan_firstItemActive, .UIWrapper__contentBlock_selectPlan_secondItemActive, .UIWrapper__contentBlock_selectPlan_thirdItemActive {
   width: 100%;
-  height: 100px;
-  padding: 20px;
+  height: 90px;
+  padding: 15px;
   box-sizing: border-box;
-  border: 1px solid silver;
+  border: 1px solid #00204d;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #f8f9fe;
+  cursor: pointer;
 }
-.UIWrapper__contentBlock_firstItemActive_description, .UIWrapper__contentBlock_secondItemActive_description, .UIWrapper__contentBlock_thirdItemActive_description {
+.UIWrapper__contentBlock_selectPlan_firstItemActive_description, .UIWrapper__contentBlock_selectPlan_secondItemActive_description, .UIWrapper__contentBlock_selectPlan_thirdItemActive_description {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -201,22 +211,24 @@
   height: 100%;
   gap: 20px;
 }
-.UIWrapper__contentBlock_firstItemActive_description_checkBox, .UIWrapper__contentBlock_secondItemActive_description_checkBox, .UIWrapper__contentBlock_thirdItemActive_description_checkBox {
-  width: 30px;
-  height: 30px;
-  border: 1px solid silver;
+.UIWrapper__contentBlock_selectPlan_firstItemActive_description_checkBoxActive, .UIWrapper__contentBlock_selectPlan_secondItemActive_description_checkBoxActive, .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_checkBoxActive {
+  width: 31.5px;
+  height: 31.5px;
   border-radius: 10px;
-  cursor: pointer;
+  background-color: #4f43ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.UIWrapper__contentBlock_firstItemActive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_secondItemActive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_thirdItemActive_description_nameItem p:nth-child(1) {
+.UIWrapper__contentBlock_selectPlan_firstItemActive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_secondItemActive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_nameItem p:nth-child(1) {
   color: #00204d;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.UIWrapper__contentBlock_firstItemActive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_secondItemActive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_thirdItemActive_description_nameItem p:nth-child(2) {
+.UIWrapper__contentBlock_selectPlan_firstItemActive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_secondItemActive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_nameItem p:nth-child(2) {
   color: rgb(149, 149, 149);
 }
-.UIWrapper__contentBlock_firstItemActive_cost, .UIWrapper__contentBlock_secondItemActive_cost, .UIWrapper__contentBlock_thirdItemActive_cost {
+.UIWrapper__contentBlock_selectPlan_firstItemActive_cost, .UIWrapper__contentBlock_selectPlan_secondItemActive_cost, .UIWrapper__contentBlock_selectPlan_thirdItemActive_cost {
   width: 80px;
   height: 100%;
   display: flex;
@@ -361,5 +373,95 @@
 @media (max-width: 425px) {
   .UIWrapper__titleBlock_userInfoTitle {
     font-size: 25px;
+  }
+  .UIWrapper__contentBlock_selectPlan {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemInactive, .UIWrapper__contentBlock_selectPlan_secondItemInactive, .UIWrapper__contentBlock_selectPlan_thirdItemInactive {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    cursor: pointer;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemInactive_description, .UIWrapper__contentBlock_selectPlan_secondItemInactive_description, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 85%;
+    height: auto;
+    gap: 20px;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemInactive_description_checkBoxInactive, .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_checkBoxInactive, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_checkBoxInactive {
+    width: 30px;
+    height: 30px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemInactive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_nameItem p:nth-child(1) {
+    color: #00204d;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemInactive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_nameItem p:nth-child(2) {
+    color: rgb(149, 149, 149);
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemInactive_cost, .UIWrapper__contentBlock_selectPlan_secondItemInactive_cost, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_cost {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4f43ff;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemActive, .UIWrapper__contentBlock_selectPlan_secondItemActive, .UIWrapper__contentBlock_selectPlan_thirdItemActive {
+    width: 100%;
+    height: 90px;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #00204d;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fe;
+    cursor: pointer;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemActive_description, .UIWrapper__contentBlock_selectPlan_secondItemActive_description, .UIWrapper__contentBlock_selectPlan_thirdItemActive_description {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 85%;
+    height: 100%;
+    gap: 20px;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemActive_description_checkBoxActive, .UIWrapper__contentBlock_selectPlan_secondItemActive_description_checkBoxActive, .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_checkBoxActive {
+    width: 31.5px;
+    height: 31.5px;
+    border-radius: 10px;
+    background-color: #4f43ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemActive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_secondItemActive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_nameItem p:nth-child(1) {
+    color: #00204d;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemActive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_secondItemActive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_nameItem p:nth-child(2) {
+    color: rgb(149, 149, 149);
+  }
+  .UIWrapper__contentBlock_selectPlan_firstItemActive_cost, .UIWrapper__contentBlock_selectPlan_secondItemActive_cost, .UIWrapper__contentBlock_selectPlan_thirdItemActive_cost {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4f43ff;
   }
 }/*# sourceMappingURL=UserInfo.css.map */
