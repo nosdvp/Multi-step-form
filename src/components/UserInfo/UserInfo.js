@@ -4,6 +4,7 @@ import arcade from '../../img/icon-arcade.svg'
 import advanced from '../../img/icon-advanced.svg'
 import pro from '../../img/icon-pro.svg'
 import finish from '../../img/icon-thank-you.svg'
+import check from '../../img/icon-checkmark.svg'
 
 const UserInfo = ({
     currentStep,
@@ -33,6 +34,12 @@ const UserInfo = ({
     const [errorEmail, setErrorEmail] = useState('')
     const [errorPhoneNumber, setErrorPhoneNumber] = useState('')
 
+    const [serviceOne, setServiceOne] = useState(1)
+    const [serviceTwo, setServiceTwo] = useState(2)
+    const [serviceThree, setServiceThree] = useState(2)
+
+    const [saveAddService, setSaveAddService] = useState([])
+
     const nextSteps = () => {
         if(name === '' && email === '' && phoneNumber === ''){
             setErrorName('This field is required!')
@@ -58,11 +65,17 @@ const UserInfo = ({
             setCostArcade(90)
             setCostAdvanced(120)
             setCostPro(150)
+            setServiceOne(10)
+            setServiceTwo(20)
+            setServiceThree(20)
         }else{
             setPeriod('Monthly')
             setCostArcade(9)
             setCostAdvanced(12)
             setCostPro(15)
+            setServiceOne(1)
+            setServiceTwo(2)
+            setServiceThree(2)
         }
     }
 
@@ -72,6 +85,23 @@ const UserInfo = ({
         console.log(`namePlan: ${period}`)
         setChoosePlan(name)
         setChoosePlanCost(cost)
+    }
+
+    const choiceAddService = (name, cost) => {
+        setSaveAddService(prev => {
+            const exist = prev.some(item => item.name === name)
+
+            if(exist){
+                return prev.filter(item => item.name !== name)
+            }
+
+            return[
+                ...prev,
+                {name, cost}
+            ]
+        })
+
+
     }
 
   return (
@@ -187,7 +217,40 @@ const UserInfo = ({
                             </>
                         ) : currentStep === 'Add-ons' ? (
                                 <>
-                                    <div className='UIWrapper__contentBlock_firstItem'></div>
+                                    <div className={UIWrapper__contentBlock}>
+                                        <div className={saveAddService.some(item => item.name === 'Online service' ? 'UIWrapper__contentBlock_firstItemInactive_description' : 'UIWrapper__contentBlock_firstItemInactive_description'}>
+                                            <div className='UIWrapper__contentBlock_firstItemInactive_description_checkBox' onClick={() => choiceAddService('Online service', serviceOne)}></div>
+                                            <div className='UIWrapper__contentBlock_firstItemInactive_description_nameItem'>
+                                                <p>Online service</p>
+                                                <p>Access to multiplayer games</p>
+                                            </div>
+                                        </div>
+                                        <div className='UIWrapper__contentBlock_firstItemInactive_cost'>
+                                            +${serviceOne}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}
+                                        </div>
+
+                                        <div className={saveAddService.some(item => item.name === 'Larger storage') ? 'UIWrapper__contentBlock_secondItemActive_description' : 'UIWrapper__contentBlock_secondItemInactive_description'}>
+                                            <div className='UIWrapper__contentBlock_secondItemInactive_description_checkBox' onClick={() => choiceAddService('Larger storage', serviceOne)}></div>
+                                            <div className='UIWrapper__contentBlock_secondItemInactive_description_nameItem'>
+                                                <p>Larger storage</p>
+                                                <p>Extra 1TB of cloud save</p>
+                                            </div>
+                                        </div>
+                                        <div className='UIWrapper__contentBlock_secondItemInactive_cost'>
+                                            +${serviceOne}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}
+                                        </div>
+
+                                        <div className={saveAddService.some(item => item.name === 'Custom profile') ? 'UIWrapper__contentBlock_thirdItemActive_description' : 'UIWrapper__contentBlock_thirdItemInactive_description'}>
+                                            <div className='UIWrapper__contentBlock_thirdItemInactive_description_checkBox' onClick={() => choiceAddService('Custom profile', serviceOne)}></div>
+                                            <div className='UIWrapper__contentBlock_thirdItemInactive_description_nameItem'>
+                                                <p>Customizable profile</p>
+                                                <p>Custom theme on your profile</p>
+                                            </div>
+                                        </div>
+                                        <div className='UIWrapper__contentBlock_thirdItemInactive_cost'>
+                                            +${serviceOne}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}
+                                        </div>
+                                    </div>
                                 </>
                         ) : null}
 
