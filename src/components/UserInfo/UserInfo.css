@@ -236,6 +236,78 @@
   justify-content: center;
   color: #4f43ff;
 }
+.UIWrapper__contentBlock_summaryBlock {
+  width: 100%;
+  height: auto;
+  background-color: #f8f9fe;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.UIWrapper__contentBlock_summaryBlock_plan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.UIWrapper__contentBlock_summaryBlock_plan_decript p {
+  color: #00204d;
+  font-weight: bold;
+}
+.UIWrapper__contentBlock_summaryBlock_plan_decript button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: silver;
+  cursor: pointer;
+}
+.UIWrapper__contentBlock_summaryBlock_plan_decript button:hover {
+  color: #4f43ff;
+  transform: scale(1.05);
+  transition: 0.1s;
+}
+.UIWrapper__contentBlock_summaryBlock_plan_cost {
+  color: #00204d;
+  font-weight: bold;
+}
+.UIWrapper__contentBlock_summaryBlock_border {
+  width: 100%;
+  border: 0.5px solid rgb(232, 232, 232);
+  margin-bottom: 20px;
+}
+.UIWrapper__contentBlock_summaryBlock_addService_blockServ {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.UIWrapper__contentBlock_summaryBlock_addService_blockServ p:nth-child(1) {
+  color: silver;
+}
+.UIWrapper__contentBlock_summaryBlock_addService_blockServ p:nth-child(2) {
+  color: #00204d;
+  font-weight: bold;
+}
+.UIWrapper__contentBlock_total {
+  width: 90%;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.UIWrapper__contentBlock_total p:nth-child(1) {
+  color: silver;
+}
+.UIWrapper__contentBlock_total p:nth-child(2) {
+  color: #4f43ff;
+  font-weight: bold;
+  font-size: 20px;
+}
 .UIWrapper__buttonDesktop {
   width: 100%;
   display: flex;
@@ -258,6 +330,7 @@
 .UIWrapper__buttonDesktop_buttonNextStep:hover, .UIWrapper__buttonDesktop_buttonBackStep:hover {
   transform: scale(1.05);
   transition: all 0.1s;
+  background-color: #4f43ff;
 }
 .UIWrapper__buttonDesktop_buttonNextStep:active, .UIWrapper__buttonDesktop_buttonBackStep:active {
   transform: scale(0.95);
@@ -267,6 +340,9 @@
   background-color: white;
   color: #00204d;
 }
+.UIWrapper__buttonDesktop_buttonBackStep:hover {
+  background-color: white;
+}
 .UIWrapper__finish {
   width: 100%;
   height: 100%;
@@ -275,8 +351,7 @@
   justify-content: center;
   flex-direction: column;
 }
-.UIWrapper__finish img,
-.UIWrapper__finish h1 {
+.UIWrapper__finish img, .UIWrapper__finish h1 {
   margin-bottom: 20px;
 }
 .UIWrapper__finish p {
@@ -379,89 +454,29 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
   }
   .UIWrapper__contentBlock_selectPlan_firstItemInactive, .UIWrapper__contentBlock_selectPlan_secondItemInactive, .UIWrapper__contentBlock_selectPlan_thirdItemInactive {
-    width: 100%;
-    height: auto;
-    padding: 15px;
+    padding: 15px 10px;
     cursor: pointer;
+    height: auto;
   }
   .UIWrapper__contentBlock_selectPlan_firstItemInactive_description, .UIWrapper__contentBlock_selectPlan_secondItemInactive_description, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    width: 85%;
+    width: 170px;
     height: auto;
-    gap: 20px;
   }
-  .UIWrapper__contentBlock_selectPlan_firstItemInactive_description_checkBoxInactive, .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_checkBoxInactive, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_checkBoxInactive {
-    width: 30px;
-    height: 30px;
-    border: 1px solid silver;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  .UIWrapper__contentBlock_selectPlan_firstItemInactive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_nameItem p:nth-child(1) {
-    color: #00204d;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  .UIWrapper__contentBlock_selectPlan_firstItemInactive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_nameItem p:nth-child(2) {
-    color: rgb(149, 149, 149);
-  }
-  .UIWrapper__contentBlock_selectPlan_firstItemInactive_cost, .UIWrapper__contentBlock_selectPlan_secondItemInactive_cost, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_cost {
-    width: 80px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #4f43ff;
+  .UIWrapper__contentBlock_selectPlan_firstItemInactive_description_nameItem, .UIWrapper__contentBlock_selectPlan_secondItemInactive_description_nameItem, .UIWrapper__contentBlock_selectPlan_thirdItemInactive_description_nameItem {
+    width: 120px;
   }
   .UIWrapper__contentBlock_selectPlan_firstItemActive, .UIWrapper__contentBlock_selectPlan_secondItemActive, .UIWrapper__contentBlock_selectPlan_thirdItemActive {
-    width: 100%;
-    height: 90px;
-    padding: 15px;
-    box-sizing: border-box;
-    border: 1px solid #00204d;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f8f9fe;
+    padding: 15px 10px;
     cursor: pointer;
+    height: auto;
   }
   .UIWrapper__contentBlock_selectPlan_firstItemActive_description, .UIWrapper__contentBlock_selectPlan_secondItemActive_description, .UIWrapper__contentBlock_selectPlan_thirdItemActive_description {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    width: 85%;
-    height: 100%;
-    gap: 20px;
+    width: 170px;
+    height: auto;
   }
-  .UIWrapper__contentBlock_selectPlan_firstItemActive_description_checkBoxActive, .UIWrapper__contentBlock_selectPlan_secondItemActive_description_checkBoxActive, .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_checkBoxActive {
-    width: 31.5px;
-    height: 31.5px;
-    border-radius: 10px;
-    background-color: #4f43ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .UIWrapper__contentBlock_selectPlan_firstItemActive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_secondItemActive_description_nameItem p:nth-child(1), .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_nameItem p:nth-child(1) {
-    color: #00204d;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  .UIWrapper__contentBlock_selectPlan_firstItemActive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_secondItemActive_description_nameItem p:nth-child(2), .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_nameItem p:nth-child(2) {
-    color: rgb(149, 149, 149);
-  }
-  .UIWrapper__contentBlock_selectPlan_firstItemActive_cost, .UIWrapper__contentBlock_selectPlan_secondItemActive_cost, .UIWrapper__contentBlock_selectPlan_thirdItemActive_cost {
-    width: 80px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #4f43ff;
+  .UIWrapper__contentBlock_selectPlan_firstItemActive_description_nameItem, .UIWrapper__contentBlock_selectPlan_secondItemActive_description_nameItem, .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_nameItem {
+    width: 120px;
   }
 }/*# sourceMappingURL=UserInfo.css.map */

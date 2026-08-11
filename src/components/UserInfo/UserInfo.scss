@@ -255,6 +255,82 @@
                 }
             }
         }
+        &_summaryBlock{
+            width: 100%;
+            height: auto;
+            background-color: #f8f9fe;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            &_plan{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                &_decript{
+                    p{
+                        color: #00204d;
+                        font-weight: bold;
+                    }
+                    button{
+                        border: none;
+                        outline: none;
+                        background-color: transparent;
+                        text-decoration: underline;
+                        text-underline-offset: 3px;
+                        color: silver;
+                        cursor: pointer;
+                        &:hover{
+                            color: #4f43ff;
+                            transform: scale(1.05);
+                            transition: 0.1s;
+                        }
+                    }
+                }
+                &_cost{
+                    color: #00204d;
+                    font-weight: bold;
+                }
+            }
+            &_border{
+                width: 100%;
+                border: 0.5px solid rgb(232, 232, 232);
+                margin-bottom: 20px;
+            }
+            &_addService{
+                &_blockServ{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                    p:nth-child(1){
+                        color: silver;
+                    }
+                    p:nth-child(2){
+                        color: #00204d;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        &_total{
+            width: 90%;
+            height: 50px;
+            margin: 0 auto;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p:nth-child(1){
+                color: silver;
+            }
+            p:nth-child(2){
+                color: #4f43ff;
+                font-weight: bold;
+                font-size: 20px;
+            }
+        }
     }
     &__buttonDesktop{
         width: 100%;
@@ -277,6 +353,7 @@
             &:hover{
                 transform: scale(1.05);
                 transition: all 0.1s;
+                background-color: #4f43ff;
             }
             &:active{
                 transform: scale(0.95);
@@ -286,6 +363,9 @@
         &_buttonBackStep{
             background-color: white;
             color: #00204d;
+            &:hover{
+                background-color: white;
+            }
         }
     }
     &__finish{
@@ -295,8 +375,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        img,
-        h1{
+        img, h1{
             margin-bottom: 20px;
         }
         p{
@@ -419,96 +498,32 @@
                 height: auto;
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
                 &_firstItemInactive,
                 &_secondItemInactive,
                 &_thirdItemInactive{
-                    width: 100%;
-                    height: auto;
-                    padding: 15px;
+                    padding: 15px 10px;
                     cursor: pointer;
+                    height: auto;
                     &_description{
-                        display: flex;
-                        align-items: center;
-                        justify-content: start;
-                        width: 85%;
+                        width: 170px;
                         height: auto;
-                        gap: 20px;
-                        &_checkBoxInactive{
-                            width: 30px;
-                            height: 30px;
-                            border: 1px solid silver;
-                            border-radius: 10px;
-                            cursor: pointer;
-                        }
                         &_nameItem{
-                            p:nth-child(1){
-                                color: #00204d;
-                                font-weight: bold;
-                                margin-bottom: 10px;
-                            }
-                            p:nth-child(2){
-                                color: rgb(149, 149, 149);
-                            }
+                            width: 120px;
                         }
-                    }
-                    &_cost{
-                        width: 80px;
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: #4f43ff;
                     }
                 }
                 &_firstItemActive,
                 &_secondItemActive,
                 &_thirdItemActive{
-                    width: 100%;
-                    height: 90px;
-                    padding: 15px;
-                    box-sizing: border-box;
-                    border: 1px solid #00204d;
-                    border-radius: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    background-color: #f8f9fe;
+                    padding: 15px 10px;
                     cursor: pointer;
+                    height: auto;
                     &_description{
-                        display: flex;
-                        align-items: center;
-                        justify-content: start;
-                        width: 85%;
-                        height: 100%;
-                        gap: 20px;
-                        &_checkBoxActive{
-                            width: 31.5px;
-                            height: 31.5px;
-                            border-radius: 10px;
-                            background-color: #4f43ff;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        }
+                        width: 170px;
+                        height: auto;
                         &_nameItem{
-                            p:nth-child(1){
-                                color: #00204d;
-                                font-weight: bold;
-                                margin-bottom: 10px;
-                            }
-                            p:nth-child(2){
-                                color: rgb(149, 149, 149);
-                            }
+                            width: 120px;
                         }
-                    }
-                    &_cost{
-                        width: 80px;
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: #4f43ff;
                     }
                 }
             }

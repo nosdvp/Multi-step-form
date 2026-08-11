@@ -80,9 +80,6 @@ const UserInfo = ({
     }
 
     const choicePlan = (name, cost, period) => {
-        console.log(`namePlan: ${name}`)
-        console.log(`namePlan: ${cost}`)
-        console.log(`namePlan: ${period}`)
         setChoosePlan(name)
         setChoosePlanCost(cost)
     }
@@ -102,6 +99,10 @@ const UserInfo = ({
         })
 
 
+    }
+
+    const changePlan = () => {
+        setCurrentStep('Select plan')
     }
 
   return (
@@ -285,6 +286,35 @@ const UserInfo = ({
                                     </div>
 
                                 </div>
+                        ) : currentStep === 'Summary' ? (
+                            <>
+                                <div className='UIWrapper__contentBlock_summaryBlock'>
+                                    <div className='UIWrapper__contentBlock_summaryBlock_plan'>
+                                        <div className='UIWrapper__contentBlock_summaryBlock_plan_decript'>
+                                            <p>{choosePlan} ({period})</p>
+                                            <button onClick={changePlan}>Change</button>
+                                        </div>
+                                        <div className='UIWrapper__contentBlock_summaryBlock_plan_cost'>${choosePlanCost}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</div>
+                                                                    
+                                    </div>
+                                    <div className='UIWrapper__contentBlock_summaryBlock_border'></div>
+
+                                    <div className='UIWrapper__contentBlock_summaryBlock_addService'>
+                                        {saveAddService.map((item) => (
+                                            <div className='UIWrapper__contentBlock_summaryBlock_addService_blockServ'>
+                                                <p>{item.name}</p>
+                                                <p>+${item.cost}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</p>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    
+                                </div>
+                                <div className='UIWrapper__contentBlock_total'>
+                                    <p>Total (per {period.toLowerCase()})</p>
+                                    <p>+${choosePlanCost + saveAddService.reduce((startItem, currentItem) => startItem.cost + currentItem.cost)}/{period === "Monthly" ? <span>mo</span> : <span>yr</span>}</p>
+                                </div>
+                            </>
                         ) : null}
 
                         <div className='UIWrapper__buttonDesktop'>
