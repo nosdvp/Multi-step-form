@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Steps from './components/Steps/Steps';
 import UserInfo from './components/UserInfo/UserInfo';
+import SupportModal from './components/supportModal/supportModal';
 
 function App() {
 
@@ -19,41 +20,56 @@ function App() {
   const [choosePlan, setChoosePlan] = useState('')
   const [choosePlanCost, setChoosePlanCost] = useState()
 
-  return (
-    <div className="wrapper">
-      <div className='contentBlock'>
-        <Steps
-          currentStep={currentStep}
-        
-          setCurrentStep={setCurrentStep}
-        />
+  const [openSupportModal, setOpenSupportModal] = useState(false)
 
-        <UserInfo
-          currentStep={currentStep}
+  return (
+    <>
+      <div className="wrapper">
+        <div className='contentBlock'>
+          <Steps
+            currentStep={currentStep}
+          
+            setCurrentStep={setCurrentStep}
+          />
+
+          <UserInfo
+            currentStep={currentStep}
+            name={name}
+            email={email}
+            phoneNumber={phoneNumber}
+            period={period}
+            costArcade={costArcade}
+            costAdvanced={costAdvanced}
+            costPro={costPro}
+            choosePlan={choosePlan}
+            choosePlanCost={choosePlanCost}
+            openSupportModal={openSupportModal}
+          
+            setCurrentStep={setCurrentStep}
+            setName={setName}
+            setEmail={setEmail}
+            setPhoneNumber={setPhoneNumber}
+            setPeriod={setPeriod}
+            setCostArcade={setCostArcade}
+            setCostAdvanced={setCostAdvanced}
+            setCostPro={setCostPro}
+            setChoosePlan={setChoosePlan}
+            setChoosePlanCost={setChoosePlanCost}
+            setOpenSupportModal={setOpenSupportModal}
+          />
+        </div>
+        <SupportModal
+          openSupportModal = {openSupportModal}
           name={name}
           email={email}
-          phoneNumber={phoneNumber}
-          period={period}
-          costArcade={costArcade}
-          costAdvanced={costAdvanced}
-          costPro={costPro}
-          choosePlan={choosePlan}
-          choosePlanCost={choosePlanCost}
-        
+
+          setOpenSupportModal={setOpenSupportModal}
           setCurrentStep={setCurrentStep}
-          setName={setName}
-          setEmail={setEmail}
-          setPhoneNumber={setPhoneNumber}
-          setPeriod={setPeriod}
-          setCostArcade={setCostArcade}
-          setCostAdvanced={setCostAdvanced}
-          setCostPro={setCostPro}
-          setChoosePlan={setChoosePlan}
-          setChoosePlanCost={setChoosePlanCost}
         />
       </div>
-
-    </div>
+        
+      
+    </>
   );
 }
 

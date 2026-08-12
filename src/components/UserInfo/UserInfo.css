@@ -238,11 +238,28 @@
 }
 .UIWrapper__contentBlock_summaryBlock {
   width: 100%;
-  height: auto;
+  height: 290px;
   background-color: #f8f9fe;
   border-radius: 10px;
   padding: 20px;
   box-sizing: border-box;
+}
+.UIWrapper__contentBlock_summaryBlock_nameUser {
+  margin-bottom: 20px;
+}
+.UIWrapper__contentBlock_summaryBlock_nameUser p {
+  color: silver;
+  margin-bottom: 5px;
+}
+.UIWrapper__contentBlock_summaryBlock_nameUser p span {
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  font-style: italic;
+  cursor: pointer;
+}
+.UIWrapper__contentBlock_summaryBlock_nameUser p span:hover {
+  color: #4f43ff;
 }
 .UIWrapper__contentBlock_summaryBlock_plan {
   display: flex;
@@ -275,14 +292,15 @@
 .UIWrapper__contentBlock_summaryBlock_border {
   width: 100%;
   border: 0.5px solid rgb(232, 232, 232);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: -10px;
 }
 .UIWrapper__contentBlock_summaryBlock_addService_blockServ {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .UIWrapper__contentBlock_summaryBlock_addService_blockServ p:nth-child(1) {
   color: silver;
@@ -295,10 +313,10 @@
   width: 90%;
   height: 50px;
   margin: 0 auto;
-  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: -20px;
 }
 .UIWrapper__contentBlock_total p:nth-child(1) {
   color: silver;

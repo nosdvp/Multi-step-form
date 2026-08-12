@@ -257,11 +257,28 @@
         }
         &_summaryBlock{
             width: 100%;
-            height: auto;
+            height: 290px;
             background-color: #f8f9fe;
             border-radius: 10px;
             padding: 20px;
             box-sizing: border-box;
+            &_nameUser{
+                margin-bottom: 20px;
+                p{
+                    color: silver;
+                    margin-bottom: 5px;
+                    span{
+                        color: black;
+                        text-decoration: underline;
+                        text-underline-offset: 5px;
+                        font-style: italic;
+                        cursor: pointer;
+                        &:hover{
+                            color: #4f43ff;
+                        }
+                    }
+                }
+            }
             &_plan{
                 display: flex;
                 align-items: center;
@@ -295,7 +312,8 @@
             &_border{
                 width: 100%;
                 border: 0.5px solid rgb(232, 232, 232);
-                margin-bottom: 20px;
+                margin-bottom: 10px;
+                margin-top: -10px;
             }
             &_addService{
                 &_blockServ{
@@ -303,7 +321,7 @@
                     height: auto;
                     display: flex;
                     justify-content: space-between;
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                     p:nth-child(1){
                         color: silver;
                     }
@@ -318,10 +336,10 @@
             width: 90%;
             height: 50px;
             margin: 0 auto;
-            margin-top: 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: -20px;
             p:nth-child(1){
                 color: silver;
             }

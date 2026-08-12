@@ -1,0 +1,42 @@
+.supportModal{
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+    background-color: rgba(192, 192, 192, 0.326);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__window{
+        width: 400px;
+        height: 500px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        h1{
+            color: #00204d;
+            padding-bottom: 20px;
+        }
+        p:nth-child(2){
+            color: silver;
+            span{
+                color: #00204d;
+                cursor: pointer;
+            }
+        }
+        p:nth-child(3){
+            color: silver;
+            span{
+                color: #00204d;
+                cursor: pointer;
+            }
+        }
+        button{
+            outline: none;
+            border: none;
+        }
+    }
+}

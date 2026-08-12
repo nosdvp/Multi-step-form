@@ -27,7 +27,8 @@ const UserInfo = ({
     setCostPro,
     setPeriod,
     setChoosePlan,
-    setChoosePlanCost
+    setChoosePlanCost,
+    setOpenSupportModal
 }) => {
 
     const [errorName, setErrorName] = useState('')
@@ -40,17 +41,28 @@ const UserInfo = ({
 
     const [saveAddService, setSaveAddService] = useState([])
 
+    const [supportModal, setSupportModal] = useState(false)
+
     const nextSteps = () => {
-        if(name === '' && email === '' && phoneNumber === ''){
+        /*if(name === '' && email === '' && phoneNumber === ''){
             setErrorName('This field is required!')
             setErrorEmail('This field is required!')
             setErrorPhoneNumber('This field is required!')
             setCurrentStep('Your info')
-        }
-        currentStep === 'Your info' && setCurrentStep('Select plan')
-        currentStep === 'Select plan' && setCurrentStep('Add-ons')
-        currentStep === 'Add-ons' && setCurrentStep('Summary')
-        currentStep === 'Summary' && setCurrentStep('Finish')
+        }else if(email === ''){
+            setErrorName('')
+            setErrorEmail('This field is required!')
+            setErrorPhoneNumber('This field is required!')
+            setCurrentStep('Your info')
+        }else if(phoneNumber === ''){
+            setErrorName('')
+            setErrorEmail('')
+            setErrorPhoneNumber('This field is required!')
+            setCurrentStep('Your info')
+        }else{
+            setCurrentStep('Finish')
+        }*/
+        setCurrentStep('Finish')
     }
 
     const backSteps = () => {
@@ -289,6 +301,12 @@ const UserInfo = ({
                         ) : currentStep === 'Summary' ? (
                             <>
                                 <div className='UIWrapper__contentBlock_summaryBlock'>
+                                    <div className='UIWrapper__contentBlock_summaryBlock_nameUser'>
+                                        <p>Your name: <span>{name}</span></p>
+                                        <p>Your contact email: <span>{email}</span></p>
+                                        <p>Your contact phone: <span>{phoneNumber}</span></p>
+                                    </div>
+                                    <div className='UIWrapper__contentBlock_summaryBlock_border'></div>
                                     <div className='UIWrapper__contentBlock_summaryBlock_plan'>
                                         <div className='UIWrapper__contentBlock_summaryBlock_plan_decript'>
                                             <p>{choosePlan} ({period})</p>
@@ -312,7 +330,7 @@ const UserInfo = ({
                                 </div>
                                 <div className='UIWrapper__contentBlock_total'>
                                     <p>Total (per {period.toLowerCase()})</p>
-                                    <p>+${choosePlanCost + saveAddService.reduce((startItem, currentItem) => startItem.cost + currentItem.cost)}/{period === "Monthly" ? <span>mo</span> : <span>yr</span>}</p>
+                                    <p>+${choosePlanCost + saveAddService.reduce((startItem, currentItem) => startItem + currentItem.cost, 0)}/{period === "Monthly" ? <span>mo</span> : <span>yr</span>}</p>
                                 </div>
                             </>
                         ) : null}
@@ -348,7 +366,7 @@ const UserInfo = ({
                 <div className='UIWrapper__finish'>
                     <img src={finish}/>
                     <h1>Thank you!</h1>
-                    <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at <span>support@loremgaming.com</span>.</p>
+                    <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at <span onClick={() => setOpenSupportModal(true)}>support@loremgaming.com</span>.</p>
                 </div>
             )}
             
@@ -377,6 +395,8 @@ const UserInfo = ({
                 </>
             ) : null}
          </div>
+
+        
     </>
     
   )
