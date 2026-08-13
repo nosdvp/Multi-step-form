@@ -22,14 +22,35 @@ function App() {
 
   const [openSupportModal, setOpenSupportModal] = useState(false)
 
+  const [errorName, setErrorName] = useState('')
+  const [errorEmail, setErrorEmail] = useState('')
+  const [errorPhoneNumber, setErrorPhoneNumber] = useState('')
+
+  const testEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  const testPhone = /^\+38\d{3}\d{3}\d{2}\d{2}$/.test(phoneNumber)
+
   return (
     <>
       <div className="wrapper">
         <div className='contentBlock'>
           <Steps
             currentStep={currentStep}
+            name={name}
+            email={email}
+            phoneNumber={phoneNumber}
+            errorName={errorName}
+            errorEmail={errorEmail}
+            errorPhoneNumber={errorPhoneNumber}
+            testEmail={testEmail}
+            testPhone={testPhone}
           
             setCurrentStep={setCurrentStep}
+            setName={setName}
+            setEmail={setEmail}
+            setPhoneNumber={setPhoneNumber}
+            setErrorName={setErrorName}
+            setErrorEmail={setErrorEmail}
+            setErrorPhoneNumber={setErrorPhoneNumber}
           />
 
           <UserInfo
@@ -44,6 +65,11 @@ function App() {
             choosePlan={choosePlan}
             choosePlanCost={choosePlanCost}
             openSupportModal={openSupportModal}
+            errorName={errorName}
+            errorEmail={errorEmail}
+            errorPhoneNumber={errorPhoneNumber}
+            testEmail={testEmail}
+            testPhone={testPhone}
           
             setCurrentStep={setCurrentStep}
             setName={setName}
@@ -56,6 +82,9 @@ function App() {
             setChoosePlan={setChoosePlan}
             setChoosePlanCost={setChoosePlanCost}
             setOpenSupportModal={setOpenSupportModal}
+            setErrorName={setErrorName}
+            setErrorEmail={setErrorEmail}
+            setErrorPhoneNumber={setErrorPhoneNumber}
           />
         </div>
         <SupportModal

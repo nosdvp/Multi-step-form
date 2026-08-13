@@ -17,6 +17,11 @@ const UserInfo = ({
     period,
     choosePlan,
     choosePlanCost,
+    errorName,
+    errorEmail,
+    errorPhoneNumber,
+    testEmail,
+    testPhone,
 
     setCurrentStep,
     setName,
@@ -28,12 +33,11 @@ const UserInfo = ({
     setPeriod,
     setChoosePlan,
     setChoosePlanCost,
-    setOpenSupportModal
+    setOpenSupportModal,
+    setErrorName,
+    setErrorEmail,
+    setErrorPhoneNumber,
 }) => {
-
-    const [errorName, setErrorName] = useState('')
-    const [errorEmail, setErrorEmail] = useState('')
-    const [errorPhoneNumber, setErrorPhoneNumber] = useState('')
 
     const [serviceOne, setServiceOne] = useState(1)
     const [serviceTwo, setServiceTwo] = useState(2)
@@ -44,25 +48,35 @@ const UserInfo = ({
     const [supportModal, setSupportModal] = useState(false)
 
     const nextSteps = () => {
-        /*if(name === '' && email === '' && phoneNumber === ''){
+        if(name === ''){
             setErrorName('This field is required!')
-            setErrorEmail('This field is required!')
-            setErrorPhoneNumber('This field is required!')
-            setCurrentStep('Your info')
-        }else if(email === ''){
-            setErrorName('')
-            setErrorEmail('This field is required!')
-            setErrorPhoneNumber('This field is required!')
-            setCurrentStep('Your info')
-        }else if(phoneNumber === ''){
-            setErrorName('')
-            setErrorEmail('')
-            setErrorPhoneNumber('This field is required!')
             setCurrentStep('Your info')
         }else{
-            setCurrentStep('Finish')
-        }*/
-        setCurrentStep('Finish')
+            setErrorName('')
+        }
+
+        if(email === ''){
+            setErrorEmail('This field is required!')
+            setCurrentStep('Your info')
+        }else if(testEmail === false){
+            setErrorEmail('Please enter correct email!')
+            setCurrentStep('Your info')
+        }else{
+            setErrorEmail('')
+        }
+
+        if(phoneNumber === ''){
+            setErrorPhoneNumber('This field is required!')
+            setCurrentStep('Your info')
+        }else if(testPhone === false){
+            setErrorPhoneNumber('Please enter correct phone number!')
+        }else{
+            setErrorPhoneNumber('')
+        }
+        
+        if(name !== '' && email !== '' && phoneNumber !== '' && testEmail === true && testPhone === true){
+            setCurrentStep('Select plan')
+        }
     }
 
     const backSteps = () => {
@@ -181,7 +195,7 @@ const UserInfo = ({
                                         <p>{errorPhoneNumber}</p>
                                     </div>
                                     <input className='UIWrapper__contentBlock_blockInputName_input'
-                                        placeholder='e.g. +1 234 567 890'
+                                        placeholder='e.g. +380972222222'
                                         type="text"
                                         inputMode="numeric"
                                         pattern="[0-9]*"

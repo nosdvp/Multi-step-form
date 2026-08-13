@@ -14,7 +14,7 @@
 
 .contentBlock{
   width: 1000px;
-  height: 600px;
+  height: auto;
   border-radius: 20px;
   background-color: white;
   display: grid;
