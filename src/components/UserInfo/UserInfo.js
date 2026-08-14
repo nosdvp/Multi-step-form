@@ -77,6 +77,10 @@ const UserInfo = ({
         if(name !== '' && email !== '' && phoneNumber !== '' && testEmail === true && testPhone === true){
             setCurrentStep('Select plan')
         }
+
+        currentStep === 'Select plan' && setCurrentStep('Add-ons')
+        currentStep === 'Add-ons' && setCurrentStep('Summary')
+        currentStep === 'Summary' && setCurrentStep('Finish')
     }
 
     const backSteps = () => {
@@ -316,9 +320,9 @@ const UserInfo = ({
                             <>
                                 <div className='UIWrapper__contentBlock_summaryBlock'>
                                     <div className='UIWrapper__contentBlock_summaryBlock_nameUser'>
-                                        <p>Your name: <span>{name}</span></p>
-                                        <p>Your contact email: <span>{email}</span></p>
-                                        <p>Your contact phone: <span>{phoneNumber}</span></p>
+                                        <p>Your name: <span onClick={() => setCurrentStep('Your info')}>{name}</span></p>
+                                        <p>Your contact email: <span onClick={() => setCurrentStep('Your info')}>{email}</span></p>
+                                        <p>Your contact phone: <span onClick={() => setCurrentStep('Your info')}>{phoneNumber}</span></p>
                                     </div>
                                     <div className='UIWrapper__contentBlock_summaryBlock_border'></div>
                                     <div className='UIWrapper__contentBlock_summaryBlock_plan'>
@@ -334,7 +338,7 @@ const UserInfo = ({
                                     <div className='UIWrapper__contentBlock_summaryBlock_addService'>
                                         {saveAddService.map((item) => (
                                             <div className='UIWrapper__contentBlock_summaryBlock_addService_blockServ'>
-                                                <p>{item.name}</p>
+                                                <p onClick={() => setCurrentStep('Add-ons')}>{item.name}</p>
                                                 <p>+${item.cost}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</p>
                                             </div>
                                         ))}

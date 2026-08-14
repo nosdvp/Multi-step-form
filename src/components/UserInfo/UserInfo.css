@@ -1,7 +1,7 @@
 .UIWrapper {
   width: 100%;
-  height: 100%;
-  padding: 60px 50px 20px 50px;
+  height: 600px;
+  padding: 30px 50px 20px 50px;
   box-sizing: border-box;
   border-radius: 10px;
 }
@@ -32,7 +32,7 @@
   border-radius: 20px;
   background-color: #f8f9fe;
   padding: 5px 20px;
-  margin-bottom: 10px;
+  margin-bottom: 17px;
 }
 .UIWrapper__contentBlock_blockInputName_titleLine, .UIWrapper__contentBlock_blockInputEmail_titleLine, .UIWrapper__contentBlock_blockInputPhone_titleLine {
   display: flex;
@@ -126,7 +126,7 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 22px;
+  margin-bottom: 90px;
   border-radius: 10px;
 }
 .UIWrapper__contentBlock_changePeriod_toggle {
@@ -152,8 +152,8 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 22px;
+  gap: 30px;
+  margin-bottom: 50px;
 }
 .UIWrapper__contentBlock_selectPlan_firstItemInactive, .UIWrapper__contentBlock_selectPlan_secondItemInactive, .UIWrapper__contentBlock_selectPlan_thirdItemInactive {
   width: 100%;
@@ -312,6 +312,12 @@
 }
 .UIWrapper__contentBlock_summaryBlock_addService_blockServ p:nth-child(1) {
   color: silver;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.UIWrapper__contentBlock_summaryBlock_addService_blockServ p:nth-child(1):hover {
+  color: #4f43ff;
 }
 .UIWrapper__contentBlock_summaryBlock_addService_blockServ p:nth-child(2) {
   color: #00204d;
@@ -324,7 +330,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: -20px;
+  padding: 27.5px 0;
 }
 .UIWrapper__contentBlock_total p:nth-child(1) {
   color: silver;
@@ -487,6 +493,9 @@
   }
 }
 @media (max-width: 425px) {
+  .UIWrapper {
+    height: auto;
+  }
   .UIWrapper__titleBlock_userInfoTitle {
     font-size: 25px;
   }
@@ -544,5 +553,14 @@
   }
   .UIWrapper__contentBlock_selectPlan_firstItemActive_description_nameItem, .UIWrapper__contentBlock_selectPlan_secondItemActive_description_nameItem, .UIWrapper__contentBlock_selectPlan_thirdItemActive_description_nameItem {
     width: 120px;
+  }
+  .UIWrapper__contentBlock_changePeriod {
+    margin-bottom: 0px;
+  }
+  .UIWrapper__contentBlock_selectPlan {
+    margin-bottom: 0px;
+  }
+  .UIWrapper__contentBlock_total {
+    padding: 30px 0px 0px 0px;
   }
 }/*# sourceMappingURL=UserInfo.css.map */
