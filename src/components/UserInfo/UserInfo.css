@@ -64,7 +64,7 @@
 .UIWrapper__contentBlock_planBlock {
   width: 100%;
   min-height: 200px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -118,6 +118,15 @@
   color: #00204d;
   font-weight: 500;
 }
+.UIWrapper__contentBlock_errorMessage {
+  text-align: center;
+  color: #ff3f3f;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 21px;
+}
 .UIWrapper__contentBlock_changePeriod {
   width: 100%;
   height: 50px;
@@ -126,7 +135,7 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 90px;
+  margin-bottom: 70px;
   border-radius: 10px;
 }
 .UIWrapper__contentBlock_changePeriod_toggle {
@@ -247,39 +256,46 @@
 .UIWrapper__contentBlock_summaryBlock {
   width: 100%;
   height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.UIWrapper__contentBlock_summaryBlock_content {
+  width: 100%;
+  height: auto;
   background-color: #f8f9fe;
   border-radius: 10px;
   padding: 20px;
   box-sizing: border-box;
 }
-.UIWrapper__contentBlock_summaryBlock_nameUser {
+.UIWrapper__contentBlock_summaryBlock_content_nameUser {
   margin-bottom: 20px;
 }
-.UIWrapper__contentBlock_summaryBlock_nameUser p {
+.UIWrapper__contentBlock_summaryBlock_content_nameUser p {
   color: silver;
   margin-bottom: 5px;
 }
-.UIWrapper__contentBlock_summaryBlock_nameUser p span {
+.UIWrapper__contentBlock_summaryBlock_content_nameUser p span {
   color: black;
   text-decoration: underline;
   text-underline-offset: 5px;
   font-style: italic;
   cursor: pointer;
 }
-.UIWrapper__contentBlock_summaryBlock_nameUser p span:hover {
+.UIWrapper__contentBlock_summaryBlock_content_nameUser p span:hover {
   color: #4f43ff;
 }
-.UIWrapper__contentBlock_summaryBlock_plan {
+.UIWrapper__contentBlock_summaryBlock_content_plan {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.UIWrapper__contentBlock_summaryBlock_plan_decript p {
+.UIWrapper__contentBlock_summaryBlock_content_plan_decript p {
   color: #00204d;
   font-weight: bold;
 }
-.UIWrapper__contentBlock_summaryBlock_plan_decript button {
+.UIWrapper__contentBlock_summaryBlock_content_plan_decript button {
   border: none;
   outline: none;
   background-color: transparent;
@@ -288,38 +304,38 @@
   color: silver;
   cursor: pointer;
 }
-.UIWrapper__contentBlock_summaryBlock_plan_decript button:hover {
+.UIWrapper__contentBlock_summaryBlock_content_plan_decript button:hover {
   color: #4f43ff;
   transform: scale(1.05);
   transition: 0.1s;
 }
-.UIWrapper__contentBlock_summaryBlock_plan_cost {
+.UIWrapper__contentBlock_summaryBlock_content_plan_cost {
   color: #00204d;
   font-weight: bold;
 }
-.UIWrapper__contentBlock_summaryBlock_border {
+.UIWrapper__contentBlock_summaryBlock_content_border {
   width: 100%;
   border: 0.5px solid rgb(232, 232, 232);
   margin-bottom: 10px;
   margin-top: -10px;
 }
-.UIWrapper__contentBlock_summaryBlock_addService_blockServ {
+.UIWrapper__contentBlock_summaryBlock_content_addService_blockServ {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
-.UIWrapper__contentBlock_summaryBlock_addService_blockServ p:nth-child(1) {
+.UIWrapper__contentBlock_summaryBlock_content_addService_blockServ p:nth-child(1) {
   color: silver;
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
-.UIWrapper__contentBlock_summaryBlock_addService_blockServ p:nth-child(1):hover {
+.UIWrapper__contentBlock_summaryBlock_content_addService_blockServ p:nth-child(1):hover {
   color: #4f43ff;
 }
-.UIWrapper__contentBlock_summaryBlock_addService_blockServ p:nth-child(2) {
+.UIWrapper__contentBlock_summaryBlock_content_addService_blockServ p:nth-child(2) {
   color: #00204d;
   font-weight: bold;
 }

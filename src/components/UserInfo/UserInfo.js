@@ -47,6 +47,8 @@ const UserInfo = ({
 
     const [supportModal, setSupportModal] = useState(false)
 
+    const [selectPlanErrorMessage, setSelectPlanErrorMessage] = useState('')
+
     const nextSteps = () => {
         if(name === ''){
             setErrorName('This field is required!')
@@ -78,10 +80,23 @@ const UserInfo = ({
             setCurrentStep('Select plan')
         }
 
-        currentStep === 'Select plan' && setCurrentStep('Add-ons')
+        if(currentStep === 'Select plan'){
+            if(choosePlan === ''){
+                setCurrentStep('Select plan')
+                setSelectPlanErrorMessage('Please select your plan!')
+            }else{
+                setCurrentStep('Add-ons')
+                setSelectPlanErrorMessage('')
+            }
+        }
         currentStep === 'Add-ons' && setCurrentStep('Summary')
         currentStep === 'Summary' && setCurrentStep('Finish')
+
+        if(currentStep === 'Summary'){
+            setSaveAddService([])
+        }
     }
+            
 
     const backSteps = () => {
         currentStep === 'Select plan' && setCurrentStep('Your info')
@@ -112,6 +127,7 @@ const UserInfo = ({
     const choicePlan = (name, cost, period) => {
         setChoosePlan(name)
         setChoosePlanCost(cost)
+        setSelectPlanErrorMessage('')
     }
 
     const choiceAddService = (name, cost) => {
@@ -238,6 +254,9 @@ const UserInfo = ({
                                         {period === 'Yearly' && <p className='UIWrapper__contentBlock_planBlock_proInactive_cutPrice'>2 months free</p>}
                                     </div>
                                 </div>
+                                <div className='UIWrapper__contentBlock_errorMessage'>
+                                    {selectPlanErrorMessage}
+                                </div>
                                 <div className='UIWrapper__contentBlock_changePeriod'>
                                     <div className='UIWrapper__contentBlock_changePeriod_monthly'>Monthly</div>
                                     <div className='UIWrapper__contentBlock_changePeriod_toggle' onClick={changePeriod}>
@@ -319,31 +338,31 @@ const UserInfo = ({
                         ) : currentStep === 'Summary' ? (
                             <>
                                 <div className='UIWrapper__contentBlock_summaryBlock'>
-                                    <div className='UIWrapper__contentBlock_summaryBlock_nameUser'>
-                                        <p>Your name: <span onClick={() => setCurrentStep('Your info')}>{name}</span></p>
-                                        <p>Your contact email: <span onClick={() => setCurrentStep('Your info')}>{email}</span></p>
-                                        <p>Your contact phone: <span onClick={() => setCurrentStep('Your info')}>{phoneNumber}</span></p>
-                                    </div>
-                                    <div className='UIWrapper__contentBlock_summaryBlock_border'></div>
-                                    <div className='UIWrapper__contentBlock_summaryBlock_plan'>
-                                        <div className='UIWrapper__contentBlock_summaryBlock_plan_decript'>
-                                            <p>{choosePlan} ({period})</p>
-                                            <button onClick={changePlan}>Change</button>
+                                    <div className='UIWrapper__contentBlock_summaryBlock_content'>
+                                        <div className='UIWrapper__contentBlock_summaryBlock_content_nameUser'>
+                                            <p>Your name: <span onClick={() => setCurrentStep('Your info')}>{name}</span></p>
+                                            <p>Your contact email: <span onClick={() => setCurrentStep('Your info')}>{email}</span></p>
+                                            <p>Your contact phone: <span onClick={() => setCurrentStep('Your info')}>{phoneNumber}</span></p>
                                         </div>
-                                        <div className='UIWrapper__contentBlock_summaryBlock_plan_cost'>${choosePlanCost}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</div>
-                                                                    
-                                    </div>
-                                    <div className='UIWrapper__contentBlock_summaryBlock_border'></div>
-
-                                    <div className='UIWrapper__contentBlock_summaryBlock_addService'>
-                                        {saveAddService.map((item) => (
-                                            <div className='UIWrapper__contentBlock_summaryBlock_addService_blockServ'>
-                                                <p onClick={() => setCurrentStep('Add-ons')}>{item.name}</p>
-                                                <p>+${item.cost}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</p>
+                                        <div className='UIWrapper__contentBlock_summaryBlock_content_border'></div>
+                                        <div className='UIWrapper__contentBlock_summaryBlock_content_plan'>
+                                            <div className='UIWrapper__contentBlock_summaryBlock_content_plan_decript'>
+                                                <p>{choosePlan} ({period})</p>
+                                                <button onClick={changePlan}>Change</button>
                                             </div>
-                                        ))}
-                                    </div>
+                                            <div className='UIWrapper__contentBlock_summaryBlock_content_plan_cost'>${choosePlanCost}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</div>            
+                                        </div>
+                                        <div className='UIWrapper__contentBlock_summaryBlock_content_border'></div>
 
+                                        <div className='UIWrapper__contentBlock_summaryBlock_content_addService'>
+                                            {saveAddService.map((item) => (
+                                                <div className='UIWrapper__contentBlock_summaryBlock_content_addService_blockServ'>
+                                                    <p onClick={() => setCurrentStep('Add-ons')}>{item.name}</p>
+                                                    <p>+${item.cost}/{period === 'Monthly' ? <span>mo</span> : <span>yr</span>}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
                                     
                                 </div>
                                 <div className='UIWrapper__contentBlock_total'>

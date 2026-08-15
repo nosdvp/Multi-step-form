@@ -43,6 +43,7 @@ function App() {
             errorPhoneNumber={errorPhoneNumber}
             testEmail={testEmail}
             testPhone={testPhone}
+            choosePlan={choosePlan}
           
             setCurrentStep={setCurrentStep}
             setName={setName}
@@ -94,6 +95,11 @@ function App() {
 
           setOpenSupportModal={setOpenSupportModal}
           setCurrentStep={setCurrentStep}
+          setName={setName}
+          setEmail={setEmail}
+          setPhoneNumber={setPhoneNumber}
+          setPeriod={setPeriod}
+          setChoosePlan={setChoosePlan}
         />
       </div>
         

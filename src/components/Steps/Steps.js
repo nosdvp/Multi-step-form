@@ -15,10 +15,11 @@ const Steps = ({
     setPhoneNumber,
     setErrorName,
     setErrorEmail,
-    setErrorPhoneNumber
+    setErrorPhoneNumber,
+    
 }) => {
 
-  const nextSteps = () => {
+  /*const nextSteps = () => {
         if(name === ''){
             setErrorName('This field is required!')
             setCurrentStep('Your info')
@@ -48,11 +49,14 @@ const Steps = ({
         if(name !== '' && email !== '' && phoneNumber !== '' && testEmail === true && testPhone === true){
             setCurrentStep('Select plan')
         }
-    }
+
+        currentStep === 'Add-ons' && setCurrentStep('Summary')
+        currentStep === 'Summary' && setCurrentStep('Finish')
+    }*/
 
   return (
     <div className='stepsWrapper'>
-        <div className='stepsWrapper__firstStep' onClick={nextSteps}>
+        <div className='stepsWrapper__firstStep'>
           <div className={currentStep === 'Your info' ? 'stepsWrapper__firstStep_circleActive' : 'stepsWrapper__firstStep_circleInactive'}>1</div>
           <div className='stepsWrapper__firstStep_descriptionStep'>
             <p>Step 1</p>
@@ -60,7 +64,7 @@ const Steps = ({
           </div>
         </div>
 
-        <div className='stepsWrapper__secondStep' onClick={nextSteps}>
+        <div className='stepsWrapper__secondStep'>
           <div className={currentStep === 'Select plan' ? 'stepsWrapper__secondStep_circleActive' : 'stepsWrapper__secondStep_circleInactive'}>2</div>
           <div className='stepsWrapper__secondStep_descriptionStep'>
             <p>Step 2</p>
@@ -68,7 +72,7 @@ const Steps = ({
           </div>
         </div>
 
-        <div className='stepsWrapper__thirdStep' onClick={nextSteps}>
+        <div className='stepsWrapper__thirdStep'>
           <div className={currentStep === 'Add-ons' ? 'stepsWrapper__thirdStep_circleActive' : 'stepsWrapper__thirdStep_circleInactive'}>3</div>
           <div className='stepsWrapper__thirdStep_descriptionStep'>
             <p>Step 3</p>
@@ -76,7 +80,7 @@ const Steps = ({
           </div>
         </div>
 
-        <div className='stepsWrapper__fourthStep' onClick={nextSteps}>
+        <div className='stepsWrapper__fourthStep'>
           <div className={currentStep === 'Summary' || currentStep === 'Finish' ? 'stepsWrapper__fourthStep_circleActive' : 'stepsWrapper__fourthStep_circleInactive'}>4</div>
           <div className='stepsWrapper__fourthStep_descriptionStep'>
             <p>Step 4</p>
